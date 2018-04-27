@@ -6,7 +6,10 @@ const config = require('./config/config')
 const serveStatic = require('serve-static')
 const history = require('connect-history-api-fallback');
 //routes
-const AuthRoutes = require('./routes/Auth.js')
+const AuthRoutes    = require('./routes/Auth.js'),
+		  ProjectRoutes = require('./routes/Projects'),
+		  TodoRoutes    = require('./routes/Todos')
+
 
 const app = express()
 
@@ -20,6 +23,8 @@ require('./passport')
 
 //use routes
 app.use(AuthRoutes)
+app.use(ProjectRoutes)
+app.use(TodoRoutes)
 
 app.listen(config.port, () => {
 		console.log(`Server is running on Port ${config.port}`)

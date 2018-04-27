@@ -4,7 +4,10 @@ const config = require('../config/config')
 
 const UserSchema = new mongoose.Schema({
 		username: {
-				type: String
+				type: String,
+				unique: true,
+				required: true,
+				index: true
 		},
 		name: String,
 		surname: String,
@@ -14,10 +17,11 @@ const UserSchema = new mongoose.Schema({
 });
 
 const user = module.exports = mongoose.model("User", UserSchema);
+
 module.exports.createUser = function (newUser, cb) {
 		const saltRounds = 10
 		const salt = bcrypt.genSaltSync(saltRounds);
-		newUser.password  = bcrypt.hashSync(newUser.password, salt);
+		newUser.password  = bcrypt.hashSync(newUser.password, salt)
 
 		newUser.save(cb)
 }

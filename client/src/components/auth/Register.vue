@@ -1,6 +1,6 @@
 <template>
   <v-layout align-center justify-center>
-    <v-flex xs12 sm8 md6>
+    <v-flex xs12 sm8 md8>
       <v-card class="elevation-12">
         <v-toolbar dense dark color="indigo">
           <v-toolbar-title>Register</v-toolbar-title>
@@ -9,9 +9,9 @@
         <v-card-text>
           <v-form>
             <v-text-field
-              prepend-icon="person"
+              prepend-icon="email"
               v-model="credentials.username"
-              label="Login"
+              label="Email"
               type="text"
             ></v-text-field>
             <v-text-field
@@ -52,7 +52,11 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="primary" @click="submit">Register</v-btn>
+          <v-btn
+            color="primary"
+            @click="submit"
+            :loading="loading"
+          >Register</v-btn>
         </v-card-actions>
       </v-card>
       <v-snackbar
@@ -94,24 +98,35 @@ export default {
         snackText: '',
         permissionsList: [
           'Admin', 'User'
-        ]
+        ],
+      loading: false
     }
   },
   methods: {
     submit (){
+      this.loading = true
       if(this.credentials.password === this.password2){
         AuthServices.register(this.credentials)
         .then((res) => {
+          if(res.data.error) {
+            this.snackbar = true
+            this.loading = false
+            this.snackText = 'Something Went Wrong...'
+          }else{
+            this.loading = false
             console.log(res.data.user)
             this.$store.dispatch('setToken', res.data.token)
             this.$store.dispatch('setUser', res.data.user)
             this.$router.push({name: 'dashboard'})
+          }
         })
           .catch((error) => {
+            this.loading = false
             console.log(error)
           })
       }else{
         this.snackbar = true
+        this.loading = false
         this.snackText = 'პაროლი ერთმანეთს არ ემთხვევა'
       }
     }

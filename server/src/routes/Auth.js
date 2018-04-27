@@ -12,8 +12,7 @@ function jwtSignUser (user) {
 }
 
 router.post('/login', (req, res) => {
-		console.log(req.body)
-	User.findOne({'username': req.body.email}, function (err, user) {
+	User.findOne({'username': req.body.username}, function (err, user) {
 			if(!user) {
 					return res.send({error: 'Username or password is incorrect'})
 			}else{
@@ -36,11 +35,12 @@ router.post('/register', (req, res) => {
 				name: req.body.name,
 				surname: req.body.surname,
 				password: req.body.password,
-				username: req.body.email,
+				username: req.body.username,
 				permission: req.body.permission
 		})
-		User.createUser(newUser,  function (err, user) {
-				if(err) return res.status(403).send({error: 'Something went wrong'})
+		console.log()
+		User.createUser(newUser, (err, user) => {
+				if(err) return res.send({error: err})
 				const userJson = user.toJSON()
 				res.status(200).send({
 						user: userJson,
