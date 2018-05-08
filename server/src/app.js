@@ -5,6 +5,7 @@ const morgan = require('morgan')
 const config = require('./config/config')
 const serveStatic = require('serve-static')
 const history = require('connect-history-api-fallback');
+const cronJob = require('./cronJob')
 //routes
 const AuthRoutes    = require('./routes/Auth.js'),
 		  ProjectRoutes = require('./routes/Projects'),
@@ -18,6 +19,8 @@ app.use(history())
 app.use(serveStatic(__dirname + "/dist"));
 // app.use(morgan('combined'))
 app.use(bodyParser.json())
+
+cronJob()
 
 require('./passport')
 

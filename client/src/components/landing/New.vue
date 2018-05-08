@@ -22,27 +22,27 @@
                 <v-select label="Status" :items="newProject.status" v-model="status"></v-select>
               </v-flex>
               <v-flex xs12 sm6 md6>
-                <v-menu
-                  ref="startDate"
-                  lazy
-                  :close-on-content-click="false"
-                  v-model="startDate"
-                  transition="scale-transition"
-                  offset-y
-                  full-width
-                  :nudge-right="40"
-                  min-width="290px"
-                  :return-value.sync="sDate"
-                >
-                  <v-text-field
-                    slot="activator"
-                    label="Start Date"
-                    v-model="sDate"
-                    prepend-icon="event"
-                    readonly
-                  ></v-text-field>
-                  <v-date-picker v-model="sDate" @input="$refs.startDate.save(sDate)"></v-date-picker>
-                </v-menu>
+                  <v-menu
+                    ref="startDate"
+                    lazy
+                    :close-on-content-click="false"
+                    v-model="startDate"
+                    transition="scale-transition"
+                    offset-y
+                    full-width
+                    :nudge-right="40"
+                    min-width="290px"
+                    :return-value.sync="sDate"
+                  >
+                    <v-text-field
+                      slot="activator"
+                      label="Start Date"
+                      v-model="sDate"
+                      prepend-icon="event"
+                      readonly
+                    ></v-text-field>
+                    <v-date-picker v-model="sDate" @input="$refs.startDate.save(sDate)"></v-date-picker>
+                  </v-menu>
               </v-flex>
               <v-flex xs12 sm6 md6>
                 <v-menu
@@ -104,7 +104,7 @@
             status: '',
             newProject: {
               phases: ['Pre-Study', 'Planning', 'Execution', 'Closing'],
-              status: ['In Progress', 'On-Hold', 'Postponed', 'Canceled']
+              status: ['In-Progress', 'On-Hold', 'Postponed', 'Canceled', 'Complete']
             }
           }
         },

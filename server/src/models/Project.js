@@ -13,6 +13,7 @@ const ProjectSchema = new mongoose.Schema({
 		phase: String,
 		status: String,
 		startDate: String,
+		description: String,
 		finishDate: String,
 		statusUpdate: [{
 				type: mongoose.Schema.Types.ObjectId,

@@ -25,11 +25,11 @@
             class="elevation-1"
           ><v-progress-linear slot="progress" color="blue" indeterminate></v-progress-linear>
             <template slot="items" slot-scope="props">
-                <td @click="showProject(props.item._id)">{{ props.item.projectName }}</td>
-                <td class="text-xs-ledt">{{ props.item.phase }}</td>
+                <td @click="showProject(props.item._id)" class="pointer">{{ props.item.projectName }}</td>
+                <td :class="props.item.phase">{{ props.item.phase }}</td>
                 <td class="text-xs-left">{{ props.item.startDate }}</td>
                 <td class="text-xs-left">{{ props.item.finishDate }}</td>
-                <td class="text-xs-left"><v-chip color="primary" outline>{{ props.item.status }}</v-chip></td>
+                <td class="text-xs-left"><v-chip :color="props.item.status" small outline>{{ props.item.status }}</v-chip></td>
             </template>
             <v-alert slot="no-results" :value="true" color="error" icon="warning">
               Your search for "{{ search }}" found no results.
@@ -90,5 +90,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.pointer:hover {
+  cursor: pointer;
+  color: #cd0000;
+  font-weight: 600;
+}
 </style>

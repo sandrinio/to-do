@@ -8,9 +8,9 @@ const Logs = require('../models/Logs')
 
 router.post('/new-project', (req, res) => {
 		const newProject = req.body
-		newProject.regDate = dateFormat(now, 'dd-mm-yyyy')
-		newProject.startDate = dateFormat(req.body.startDate, 'dd-mm-yyyy')
-		newProject.finishDate = dateFormat(req.body.finishDate, 'dd-mm-yyyy')
+		newProject.regDate = dateFormat(now, 'yyyy-mm-dd')
+		newProject.startDate = dateFormat(req.body.startDate, 'yyyy-mm-dd')
+		newProject.finishDate = dateFormat(req.body.finishDate, 'yyyy-mm-dd')
 
 		Project.create(newProject, function (err, result) {
 				if(err) return res.send({error: 'Something Went Wrong'})
@@ -30,6 +30,13 @@ router.get('/projectsGetter', (req, res) => {
 
 router.get('/getProject/:id', (req, res) => {
 		Project.findById(req.params.id, function (err, project) {
+				if(err) return res.send({error: 'Something Went Wrong'})
+				res.send({success: 'done', project: project})
+		})
+})
+
+router.post('/editProject/:id', (req, res) => {
+		Project.findByIdAndUpdate(req.params.id, req.body, function (err, project) {
 				if(err) return res.send({error: 'Something Went Wrong'})
 				res.send({success: 'done', project: project})
 		})

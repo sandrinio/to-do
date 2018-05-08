@@ -9,5 +9,8 @@ export default {
   },
   getProject (id) {
     return Api().get(`getProject/${id}`)
+  },
+  editProject (data) {
+    return Api().post(`/editProject/${data._id}`, data)
   }
 }

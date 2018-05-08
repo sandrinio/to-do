@@ -18,9 +18,9 @@ router.post('/newTask', (req, res) => {
 						date: req.body.deadline.date,
 						time: req.body.deadline.time
 				},
-				regDate: dateFormat(now, 'dd-mm-yyyy')
+				regDate: dateFormat(now, 'yyyy-mm-dd')
 		}
-		newTodo.deadline.date = dateFormat(req.body.deadline.date, 'dd-mm-yyyy')
+		newTodo.deadline.date = dateFormat(req.body.deadline.date, 'yyyy-mm-dd')
 		Project.findById(req.body.projectId, function (err, proje) {
 				if(err) return res.send({error: 'Something Went Wrong project'})
 				Todos.create(newTodo, function (err, newTask) {
@@ -57,8 +57,11 @@ router.get('/tasksGetter/:id', (req, res) => {
 		})
 })
 
-router.get('/deleteTask/:id', (req, res) => {
-		console.log(req.body)
+router.post('/deleteTask/:id', (req, res) => {
+		Todos.findByIdAndRemove(req.params.id, function (err, result) {
+				if(err) return res.send({error: 'Something Went Wrong'})
+				res.send(result)
+		})
 })
 
 module.exports = router

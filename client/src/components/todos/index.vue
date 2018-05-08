@@ -2,15 +2,15 @@
   <v-container grid-list-md>
     <v-layout>
     <v-flex xs12>
-      <h4 @click="newTodo">Tasks</h4>
+      <h4 @click="newTodo" class="pointer">Tasks</h4>
       <div class="lines"></div>
         <ul class="list elevation-3">
-          <li class="lines" v-for="(item, index) in items" @click="todoSelected(item)">
+          <li class="lines" v-for="(item, index) in items">
             <v-btn icon @click="completeTask(item, index)">
             <v-icon color="green">done</v-icon>
             </v-btn>
-            {{item.title}}
-            <span class="right">{{item.deadline.date.slice(0,5)}}</span>
+            <span class="pointer" @click="todoSelected(item)">{{item.title}}</span>
+            <span class="right"> <v-icon>date_range</v-icon>{{item.deadline.date.slice(5)}}</span>
           </li>
         </ul>
     </v-flex>
@@ -72,11 +72,10 @@ export default {
     },
     completeTask (item, index) {
       this.loading = true
-      console.log(item)
       TodoServices.deleteTask(item)
         .then((res) => {
           this.loading = false
-          this.item.splice(index, 1);
+          this.items.splice(index, 1);
         })
     }
   },
@@ -93,6 +92,13 @@ export default {
 </script>
 
 <style scoped>
+
+  .pointer:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #cd0000;
+  }
+
   h4 {
     color: #cd0000;
     font-size: 34px;
@@ -110,7 +116,6 @@ export default {
   .list li {
     list-style: none;
     border-bottom: 1px dotted #ccc;
-    text-indent: 15px;
     height: auto;
     padding: 5px;
     text-transform: capitalize;

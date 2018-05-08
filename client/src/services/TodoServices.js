@@ -11,6 +11,6 @@ export default {
     return Api().post(`modifyTask/${data[0]._id}`, data)
   },
   deleteTask (data) {
-    return Api().get(`deleteTask/${data._id}`, data)
+    return Api().post(`deleteTask/${data._id}`, data)
   }
 }

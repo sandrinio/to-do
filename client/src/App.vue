@@ -38,4 +38,41 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+.Pre-Study {
+  border-color: darkblue !important;
+  color: darkblue !important;
+}
+.Planning {
+  border-color: darkgreen !important;
+  color: darkgreen !important;
+}
+.Execution {
+  border-color: darkcyan !important;
+  color: darkcyan !important;
+}
+.Closing {
+  border-color: darkslateblue !important;
+  color: darkslateblue !important;
+}
+.In-Progress {
+  border-color: darkgreen !important;
+  color: darkgreen !important;
+}
+.On-Hold {
+  border-color: darkgoldenrod !important;
+  color: darkgoldenrod !important;
+}
+.Postponed {
+  border-color: darkgoldenrod !important;
+  color: darkgoldenrod !important;
+}
+.Canceled {
+  border-color: darkred !important;
+  color: darkred !important;
+}
+.Complete {
+  border-color: darkslategrey !important;
+  color: darkslategrey !important;
+}
+
 </style>

@@ -5,6 +5,7 @@
     v-model="drawer"
     app
     :clipped="$vuetify.breakpoint.lgAndUp"
+
   >
     <v-list dense>
       <v-list-tile @click="navigateTo({name: 'dashboard'})">
@@ -27,7 +28,7 @@
   </v-navigation-drawer>
   <v-toolbar color="indigo" dark fixed app :clipped-left="$vuetify.breakpoint.lgAndUp">
     <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-    <v-toolbar-title>Todo</v-toolbar-title>
+    <v-toolbar-title @click="navigateTo({path: '/'})" class="header-title">Todo</v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
       <v-menu offset-y open-on-hover>
@@ -80,5 +81,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+ .header-title {
+   cursor: pointer;
+ }
 </style>
