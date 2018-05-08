@@ -6,6 +6,7 @@ const config = require('./config/config')
 const serveStatic = require('serve-static')
 const history = require('connect-history-api-fallback');
 const cronJob = require('./cronJob')
+const mailer = require('./middleware/mailer')
 //routes
 const AuthRoutes    = require('./routes/Auth.js'),
 		  ProjectRoutes = require('./routes/Projects'),

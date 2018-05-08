@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1646eaa5-4a90-41a2-b4d7-8e72122f2186" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/server/src/cronJob.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/landing/Dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/landing/Dashboard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/landing/New.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/landing/New.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/landing/Show.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/landing/Show.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/partials/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/partials/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/todos/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/todos/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/services/ProjectServices.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/services/ProjectServices.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/services/TodoServices.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/services/TodoServices.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/models/Project.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/models/Project.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/routes/Projects.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/routes/Projects.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/routes/Todos.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/routes/Todos.js" afterDir="false" />
-    </list>
+    <list default="true" id="1646eaa5-4a90-41a2-b4d7-8e72122f2186" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -45,8 +26,8 @@
       <file leaf-file-name="cronJob.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/src/cronJob.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="55" lean-forward="true" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
+            <state relative-caret-position="285">
+              <caret line="19" column="55" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -275,6 +256,7 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
   </component>
   <component name="RecentsManager">
@@ -312,12 +294,12 @@
       <workItem from="1524685684937" duration="66731000" />
       <workItem from="1525414810364" duration="434000" />
       <workItem from="1525689819255" duration="6913000" />
-      <workItem from="1525707202198" duration="15596000" />
+      <workItem from="1525707202198" duration="15960000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90281000" />
+    <option name="totallyTimeSpent" value="90645000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -327,7 +309,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32965517" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3048276" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -710,8 +692,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/src/cronJob.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="55" lean-forward="true" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
+        <state relative-caret-position="285">
+          <caret line="19" column="55" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
         </state>
       </provider>
     </entry>
