@@ -58,10 +58,11 @@ router.get('/tasksGetter/:id', (req, res) => {
 })
 
 router.post('/deleteTask/:id', (req, res) => {
-		Todos.findByIdAndRemove(req.params.id, function (err, result) {
+		Todos.findByIdAndRemove(req.params.id, function (err, todo){
 				if(err) return res.send({error: 'Something Went Wrong'})
-				res.send(result)
 		})
 })
+		// Todos.findByIdAndRemove(req.params.id, function (err, result) {
+		// 		if(err) return res.send({error: 'Something Went Wrong'})
 
 module.exports = router

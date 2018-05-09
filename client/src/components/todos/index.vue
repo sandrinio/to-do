@@ -14,7 +14,7 @@
           </li>
         </ul>
     </v-flex>
-      <Todo-Details xs12 v-if="todoDetailsComponent" :selected="selected" :edited="edited"></Todo-Details>
+      <Todo-Details v-if="todoDetailsComponent" :selected="selected" :edited="edited"></Todo-Details>
       <New-Task-Component xs12 v-if="newTodoComponent" :createdTodo="createdTodo"></New-Task-Component>
     </v-layout>
   </v-container>

@@ -29,6 +29,7 @@
                 <td :class="props.item.phase">{{ props.item.phase }}</td>
                 <td class="text-xs-left">{{ props.item.startDate }}</td>
                 <td class="text-xs-left">{{ props.item.finishDate }}</td>
+                <!--<td class="text-xs-left">{{ props.item.todos.length }}</td>-->
                 <td class="text-xs-left"><v-chip :color="props.item.status" small outline>{{ props.item.status }}</v-chip></td>
             </template>
             <v-alert slot="no-results" :value="true" color="error" icon="warning">
@@ -61,6 +62,7 @@ export default {
       { text: 'Phase', value: 'phase' },
       { text: 'Start Date', value: 'start' },
       { text: 'Planned Finish', value: 'finish' },
+      // { text: 'Tasks', value: 'tasks' },
       { text: 'Status', value: 'status' }
     ],
     items: [],
