@@ -16,6 +16,9 @@ module.exports = function (){
 					const reminder1 = moment(todo.deadline.date + ' ' + todo.deadline.time).subtract(15, 'minutes').format('YYYY-MM-DD h:mm')
 					const reminder2 = moment(todo.deadline.date + ' ' + todo.deadline.time).subtract(5, 'minutes').format('YYYY-MM-DD h:mm')
 					const deadline = moment(todo.deadline.date + ' ' + todo.deadline.time).format('YYYY-MM-DD h:mm')
+						console.log(`Now is ${now}`)
+						console.log(`Deadline is ${deadline}`)
+						console.log('=============')
 					if(now === reminder1 || now === deadline){
 							console.log(reminder1)
 						const HelperOption = {
